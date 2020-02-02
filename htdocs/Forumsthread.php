@@ -1,3 +1,5 @@
+<?php if(!isset($_GET['page'])) die(header("refresh: 0; index.php?page=forum")); ?>
+
 <script>
 	document.getElementById('sidebar').style.display = 'none';
 </script>
@@ -96,24 +98,21 @@
 			if($delete > 0){
 				$abfrage = "SELECT a_autor FROM answers WHERE a_id='$delete'";
 				$ergebnis = $connect->query($abfrage);
+				header("refresh:2; url=index.php?page=fthread&threadId=$tid" );
 				if($ergebnis->num_rows> 0){
 					$row=$ergebnis->fetch_assoc();
 					if($autor == $row["a_autor"]){
 						$abfrage = "DELETE FROM answers WHERE a_id='$delete'";
 						if($connect->query($abfrage)){
 							echo '<p style="position: absolute; margin-left: 35%; margin-top: -10%; box-shadow: 0 10px 10px rgba(225, 0, 4, 0.5); z-index: 3; background-color: #1C1C1C; color: red; padding: 5% 3%;">Antwort erfolgreich gelöscht</p>';
-							header("refresh:2; url=index.php?page=fthread&threadId=$tid" );
 						} else {
 							echo '<p style="position: absolute; margin-left: 35%; margin-top: -10%; box-shadow: 0 10px 10px rgba(225, 0, 4, 0.5); z-index: 3; background-color: #1C1C1C; color: red; padding: 5% 3%;">Antwort konnte nicht gelöscht werden</p>';
-							header("refresh:2; url=index.php?page=fthread&threadId=$tid" );
 						}
 					} else {
 						echo '<p style="position: absolute; margin-left: 35%; margin-top: -10%; box-shadow: 0 10px 10px rgba(225, 0, 4, 0.5); z-index: 3; background-color: #1C1C1C; color: red; padding: 5% 3%;">Du hast keinen Zugriff auf diese Antwort</p>';
-						header("refresh:2; url=index.php?page=fthread&threadId=$tid" );
 					}
 				} else {
 					echo '<p style="position: absolute; margin-left: 35%; margin-top: -10%; box-shadow: 0 10px 10px rgba(225, 0, 4, 0.5); z-index: 3; background-color: #1C1C1C; color: red; padding: 5% 3%;">Du hast keinen Zugriff auf diese Antwort</p>';
-					header("refresh:2; url=index.php?page=fthread&threadId=$tid" );
 				}
 			}
 		?>

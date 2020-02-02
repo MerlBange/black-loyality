@@ -24,6 +24,9 @@
 					document.getElementById('logoutbutton').style.display = 'none';
 					document.getElementById('sidebar').style.display = 'none';
 					document.getElementById('probut').style.display = 'none';
+					document.getElementById('forumbutton').style.display = 'none';
+					document.getElementById('expe').style.display = 'none';
+					document.getElementById('class').style.display = 'none';
 				</script>
 				<?php
 				echo '<div id="reglog">';
@@ -41,6 +44,9 @@
 					document.getElementById('logoutbutton').style.display = 'none';
 					document.getElementById('sidebar').style.display = 'none';
 					document.getElementById('probut').style.display = 'none';
+					document.getElementById('forumbutton').style.display = 'none';
+					document.getElementById('expe').style.display = 'none';
+					document.getElementById('class').style.display = 'none';
 				</script>
 				<?php
 				echo '<div id="reglog">';

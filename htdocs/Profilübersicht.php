@@ -1,3 +1,5 @@
+<?php if(!isset($_GET['page'])) die(header("refresh: 0; index.php?page=profil")); ?>
+
 <div id="home">
 <div id="profilleiste">
 	<?php
@@ -36,7 +38,7 @@
 		$connect->set_charset("utf8");
 		
 		?>
-		<img style="position: absolute; margin-top: 1%; margin-left: 77%; border-radius: 100px;" src="<?php 
+		<img id="pb" style="position: absolute; margin-top: 1%; margin-left: 77%; border-radius: 100px;" src="<?php 
 		if(is_file("shared/$benutzer/profilbild.png")) echo "shared/$benutzer/profilbild.png";
 		else echo "shared/public/profilbild.png";
 		?>" height="200px" width="200px">
@@ -57,7 +59,8 @@
 		
 		$i = 1;
 		if($benutzer != 'Gast' && $_GET["edit"] == 1){?>
-				<form action="index.php?page=profil&save=1" method="POST">
+				<script> document.getElementById('pb').style.display = 'none'; </script>
+				<form action="index.php?page=profil&user=<?= $benutzer?>&save=1" method="POST">
 				
 					<div class="row">
 						<div class="r1"> User-ID </div>
@@ -161,7 +164,7 @@
 		if($_GET["edit"] == 0) {
 			echo '<div class="row">
 					<div class="r3">
-						<a href="index.php?page=profil&edit=1"><div class="button login">Daten ändern</div></a>
+						<a href="index.php?page=profil&user='.$benutzer.'&edit=1"><div class="button login">Daten ändern</div></a>
 					</div>
 				</div>';
 		}

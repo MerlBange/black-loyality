@@ -12,4 +12,5 @@ $dateien['users'] = "Nutzerübersicht.php";
 $dateien['forum'] = "Forum.php";
 $dateien['fthread'] = "Forumsthread.php";
 $dateien['picupload'] = "picupload.php";
+$dateien['classes'] = "Klassen.php";
 ?>

@@ -1,3 +1,5 @@
+<?php if(!isset($_GET['page'])) die(header("refresh: 0; index.php?page=picupload")); ?>
+
 <div id="home">
 <div id="profilleiste">
 	<a href="index.php?page=profil&user=<?php echo $_SESSION["benutzer"];?>"><div class="button profil" id="Profilübersichtsbutton">Profilübersicht</div></a>
@@ -7,7 +9,7 @@
 		document.getElementById('profil4').style.backgroundColor = 'rgb(30,30,30)';
 		document.title = "Black Loyality || Profilbild hochladen"
 	</script>
-	<?php 
+	<?php
 	error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 		if($g_id == 1){ ?>
 		<a href="index.php?page=users"><div class="button profil" name="profil3">Alle User</div></a>

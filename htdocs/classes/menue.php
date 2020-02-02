@@ -9,7 +9,8 @@
 	if (isset($_SESSION['benutzer']) || (!empty($_POST))) echo '<a href="index.php?page=forum"><div id="forumbutton" class="button homebutton"><img class="ico" src="media/blog.png" /> FORUM</div></a>';
 	if ($g_id == 1) { 
 	?>
-		<a href="index.php?page=Blog"><div class="button homebutton" id="expe"><img class="ico" src="media/blog.png" /> BLOG</div></a>
+		<a href="index.php?page=Blog"><div class="button homebutton" id="expe"><img class="ico" src="media/blog.png" /> NEWS</div></a>
+		<a href="index.php?page=classes"><div class="button homebutton" id="class"><img class="ico" src="media/class.png" /> KLASSE</div></a>
 	<?php
 	} 
 	?>

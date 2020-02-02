@@ -1,3 +1,4 @@
+<?php if(!isset($_GET['page'])) die(header("refresh: 0; index.php?page=forum")); ?>
 <script>
 	document.getElementById('sidebar').style.display = 'none';
 </script>

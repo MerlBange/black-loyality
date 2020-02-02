@@ -1,3 +1,5 @@
+<?php if(!isset($_GET['page'])) die(header("refresh: 0; ../index.php?page=pwchange")); ?>
+
 <div id="home">
 	<div id="profilleiste">
 		<a href="index.php?page=profil&user=<?php echo $_SESSION["benutzer"];?>"><div class="button profil" id="Profilübersichtsbutton">Profilübersicht</div></a>
