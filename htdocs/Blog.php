@@ -1,3 +1,4 @@
+<?php if(!isset($_GET['page'])) die(header("refresh: 0; index.php?page=Blog")); ?>
 <div id="home">
 	<div id="news_start">
 		<div id="startnews">

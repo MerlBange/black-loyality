@@ -1,3 +1,5 @@
+<?php if(!isset($_GET['page'])) die(header("refresh: 0; index.php?page=users")); ?>
+
 <script>
 	document.getElementById('logoutbutton').style.display = 'none';
 	document.getElementById('sidebar').style.display = 'none';

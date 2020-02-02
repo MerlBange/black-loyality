@@ -1,3 +1,5 @@
+<?php if(!isset($_GET['page'])) die(header("refresh: 0; index.php?page=users")); ?>
+
 <div id="reglog">
 	<script>
 		document.getElementById('sidebar').style.display = 'none';
@@ -63,10 +65,12 @@
 				$statement->execute(array($username,$passwort,$vname,$name,$email));
 				
 				if($statement) {        
-					echo 'Du wurdest erfolgreich registriert. <a href="index.php"><div class="button login">Zum Login</div></a>';
+					echo '<p style="margin-top: 2%; margin-left: 2%; color: white; font-size: 18pt;">Du wurdest erfolgreich registriert.</p>';
+					header( "refresh:2; index.php");
 					$Form = false;
 				} else {
-					echo 'Es ist ein Fehler aufgetreten';
+					echo '<p style="margin-top: 2%; margin-left: 2%; color: white; font-size: 18pt;">Es ist ein Fehler aufgetreten</p>';
+					header( "refresh:2; index.php");
 				}
 			}
 			$Form = false;
